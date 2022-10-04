@@ -150,7 +150,7 @@ function anero_sidebars() {
 	
 	register_sidebar([
 		'name' => 'Post Sidebar',
-		'id' => 'sidebar-post',
+		'id' => 'sidebar-single-post',
 		'description' => esc_html__( 'Drag and drop your widgets here', 'anero' ),
 		'before_widget' => '<div class="sidebar">',
 		'after_widget' => '</div>',

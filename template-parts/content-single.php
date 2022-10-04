@@ -30,7 +30,7 @@
                         <hr>
                     </article>
                 </div>
-	            <?php get_sidebar('post'); ?>
+	            <?php get_sidebar('single-post'); ?>
             </div>
         </div>
     </div>
