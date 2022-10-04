@@ -7,6 +7,9 @@ require_once get_template_directory() . "/inc/sanitize.php";
 require_once get_template_directory() . "/inc/customizer.php";
 require_once get_template_directory() . "/inc/customizer/template-tag.php";
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+if(class_exists('WooCommerce')) {
+	require get_template_directory() . '/inc/wc-modifications.php';
+}
 
 /*
  * Load all css and js scripts
