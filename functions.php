@@ -1,6 +1,12 @@
 <?php
+/*
+ * Requires
+ */
+require_once get_template_directory() . "/inc/customizer-classes.php";
 require_once get_template_directory() . "/inc/sanitize.php";
 require_once get_template_directory() . "/inc/customizer.php";
+require_once get_template_directory() . "/inc/customizer/template-tag.php";
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /*
  * Load all css and js scripts
@@ -55,9 +61,6 @@ add_action( 'wp_enqueue_scripts', 'loadScripts' );
 
 function anero_config()
 {
-	// Bootstrap Menu
-	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
-	
 	//Navbar menu
 	register_nav_menus(
 		array(
@@ -151,4 +154,13 @@ function anero_sidebars() {
 		'before_title' => '<h2 style="display: none;">',
 		'after_title' => '</h2>'
 	]);
+}
+
+function templateBlogGetPosts($category, $count): array {
+	return [
+		'post_type' 		=> 'post',
+		'post_status'	 	=> 'publish',
+		'category__in' 		=> absint( $category ),
+		'posts_per_page' 	=> absint( $count )
+	];
 }

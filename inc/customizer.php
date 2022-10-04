@@ -12,5 +12,8 @@ function anero_customizer($wp_customize) {
 	
 	//Theme Home Page
 	require_once('customizer/theme-home-options.php');
+	
+	//Theme Blog Page
+	require_once('customizer/theme-blog-customizer.php');
 }
 add_action( 'customize_register', 'anero_customizer' );
