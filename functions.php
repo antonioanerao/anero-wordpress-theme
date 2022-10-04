@@ -100,3 +100,55 @@ function anero_config()
 	}
 }
 add_action( 'after_setup_theme', 'anero_config', 0 );
+
+/**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ */
+add_action( 'widgets_init', 'anero_sidebars' );
+function anero_sidebars() {
+	register_sidebar(
+		array(
+			'name'			=> esc_html__( 'Footer Sidebar 1', 'anero' ),
+			'id'			=> 'anero-sidebar-footer-1',
+			'description'	=> esc_html__( 'Drag and drop your widgets here', 'anero' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		));
+	
+	register_sidebar(
+		array(
+			'name'			=> esc_html__( 'Footer Sidebar 2', 'anero' ),
+			'id'			=> 'anero-sidebar-footer-2',
+			'description'	=> esc_html__( 'Drag and drop your widgets here', 'anero' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		));
+	
+	register_sidebar(
+		array(
+			'name'			=> esc_html__( 'Footer Sidebar 3', 'anero' ),
+			'id'			=> 'anero-sidebar-footer-3',
+			'description'	=> esc_html__( 'Drag and drop your widgets here', 'anero' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		));
+	
+	register_sidebar([
+		'name' => 'Post Sidebar',
+		'id' => 'sidebar-post',
+		'description' => esc_html__( 'Drag and drop your widgets here', 'anero' ),
+		'before_widget' => '<div class="sidebar">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 style="display: none;">',
+		'after_title' => '</h2>'
+	]);
+}
