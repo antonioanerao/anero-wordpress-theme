@@ -9,6 +9,8 @@ function anero_customizer($wp_customize) {
 	
 	/* Social Media section start */
 	require_once('customizer/footer/theme-social-media-settings.php');
+	
+	//Theme Home Page
+	require_once('customizer/theme-home-options.php');
 }
 add_action( 'customize_register', 'anero_customizer' );
-
