@@ -157,6 +157,32 @@ function anero_sidebars() {
 		'before_title' => '<h2 style="display: none;">',
 		'after_title' => '</h2>'
 	]);
+	
+	/*
+	 * Woocommerce Sidebar
+	 */
+	register_sidebar(
+		array(
+			'name'			=> esc_html__( 'Sidebar Shop', 'anero' ),
+			'id'			=> 'anero-sidebar-shop',
+			'description'	=> esc_html__( 'Drag and drop your WooCommerce widgets here', 'anero' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		));
+	
+	register_sidebar(
+		array(
+			'name'			=> esc_html__( 'Category Product Sidebar', 'anero' ),
+			'id'			=> 'anero-sidebar-product-category',
+			'description'	=> esc_html__( 'Drag and drop your WooCommerce widgets here', 'anero' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
+		));
+	
 }
 
 function templateBlogGetPosts($category, $count): array {
